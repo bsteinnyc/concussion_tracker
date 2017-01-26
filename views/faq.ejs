@@ -14,16 +14,17 @@
       <form id="container">
             <h2><center>Frequently Asked Questions</center></h2>
          <h2><% for (var i=0; i<data.length; i++){ %></h2>
-         <div class="question" id="<%= data[i] %>"> 
+         <div class="question" id="<%= data[i] %>">
            <a href="#collapsed<%= i %>" class="btn btn-info" data-toggle="collapse"><%= data[i].question %></a>
-         <h2><span></span></h2>
-            <h2><% for (var j = 0; j < data.length; j++) { %></h2>
+         <h2><span></span></h2></h2>
             <div class="answer">
-              <div id="collapsed<%= i %>"" class="collapse">
-            <ul><%=data[i]["answer"][j]%></ul>
+              <div id="collapsed<%= i %>" class="collapse">
+            <%for (var j = 0; j < data[i].answer.length; j++){ %>
+    <p>&nbsp; &nbsp; <%= data[i].answer[j] %></p>
+    <% } %>
             </div>
+            
             </div>
-            <% } %>
             </div>
             <p></p>
             <p></p>
